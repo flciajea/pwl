@@ -18,7 +18,7 @@ class LoginController extends Controller
     $credentials = $request->only('nip', 'password');
     if (Auth::attempt($credentials)) {
         $user = Auth::user();
-        if ($user->role_id == 2) {
+        if ($user->role_id == 3) {
             return redirect()->route('mahasiswa.dashboard');
         } elseif ($user->role_id == 1) {
             return redirect()->route('admin.dashboard');

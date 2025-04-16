@@ -22,6 +22,19 @@ Route::get('/mahasiswa/dashboard', [MahasiswaController::class, 'index'])->name(
 
 
 // routes/web.php
-Route::get('/mahasiswa/surat/keterangan-aktif', [SuratController::class,])->name('mahasiswa.surat.keterangan-aktif');
-Route::post('/mahasiswa/surat/keterangan-aktif', [SuratController::class, 'keterangan-aktif']);
+Route::get('/mahasiswa/surat/keterangan-aktif', [SuratController::class, 'KeteranganAKtif'])->name('mahasiswa.surat.keterangan-aktif');
+Route::post('/mahasiswa/surat/keterangan-aktif', [SuratController::class, 'keteranganAktif']);
+
+
+// Surat Pengantar Tugas Mata Kuliah
+Route::get('/mahasiswa/surat/pengantar-tugas', [SuratController::class, 'pengantarTugas'])->name('mahasiswa.surat.pengantar-tugas');
+Route::post('/mahasiswa/surat/pengantar-tugas', [SuratController::class, 'storePengantarTugas']);
+
+// Surat Keterangan Lulus
+Route::get('/mahasiswa/surat/keterangan-lulus', [SuratController::class, 'keteranganLulus'])->name('mahasiswa.surat.keterangan-lulus');
+Route::post('/mahasiswa/surat/keterangan-lulus', [SuratController::class, 'storeKeteranganLulus']);
+
+// Laporan Hasil Studi
+Route::get('/mahasiswa/surat/laporan-hasil-studi', [SuratController::class, 'laporanHasilStudi'])->name('mahasiswa.surat.laporan-hasil-studi');
+Route::post('/mahasiswa/surat/laporan-hasil-studi', [SuratController::class, 'storeLaporanHasilStudi']);
 
